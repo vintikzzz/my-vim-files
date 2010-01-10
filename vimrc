@@ -218,10 +218,13 @@ nnoremap <C-L> :nohls<CR><C-L>
 inoremap <C-L> <C-O>:nohls<CR>
 
 "map to bufexplorer
-nnoremap <C-B> :BufExplorer<cr>
+nnoremap <leader>b :BufExplorer<cr>
+
+"map to bufexplorer
+nnoremap <leader>t :NERDTreeToggle<cr>
 
 "map to fuzzy finder text mate stylez
-nnoremap <c-f> :FuzzyFinderTextMate<CR>
+nnoremap <c-f> :FufFile **/<CR>
 
 "map Q to something useful
 noremap Q gq
@@ -231,22 +234,6 @@ nnoremap Y y$
 
 "mark syntax errors with :signs
 let g:syntastic_enable_signs=1
-
-"snipmate setup
-source ~\vimfiles\snippets\support_functions.vim
-autocmd vimenter * call s:SetupSnippets()
-function! s:SetupSnippets()
-
-    "if we're in a rails env then read in the rails snippets
-    if filereadable("./config/environment.rb")
-        call ExtractSnips("~/.vim/snippets/ruby-rails", "ruby")
-        call ExtractSnips("~/.vim/snippets/eruby-rails", "eruby")
-    endif
-
-    call ExtractSnips("~/.vim/snippets/html", "eruby")
-    call ExtractSnips("~/.vim/snippets/html", "xhtml")
-    call ExtractSnips("~/.vim/snippets/html", "php")
-endfunction
 
 "visual search mappings
 function! s:VSetSearch()
@@ -286,7 +273,6 @@ colorscheme InkPot
 set nu "Отображать номер астрок
 set sw=2 "Заменяет TAB на 2 пробела
 set sts=2 "Аналогично, но в случае автоотступа
-let g:fuzzy_ignore = "gems/*"
 set guifont=Consolas:h12:cRUSSIAN
 if has("multi_byte")
 if &termencoding == ""
@@ -296,10 +282,8 @@ setglobal fileencoding=utf-8 bomb
 set fileencodings=utf-8,cp1251,koi8-r,latin1
 set fileformats=dos,unix,mac
 endif
-autocmd VimEnter * NERDTree
-autocmd VimEnter * NERDTree
-autocmd VimEnter * wincmd p
 set keymap=russian-jcukenwin
+set iskeyword=@,48-57,_,192-255
 set iminsert=0
 map ё `
 map й q
@@ -367,4 +351,7 @@ map Т N
 map Ь M
 map Б <
 map Ю >
-
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
