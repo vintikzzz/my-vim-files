@@ -11,11 +11,11 @@
 " Ruby IRB/Complete author: Keiju ISHITSUKA(keiju@ishitsuka.com)
 " ----------------------------------------------------------------------------
 
-" {{{ requirement checks
-"if !has('ruby')
-"    s:ErrMsg( "Error: Required vim compiled with +ruby" )
-"    finish
-"endif
+{{{ requirement checks
+if !has('ruby')
+   s:ErrMsg( "Error: Required vim compiled with +ruby" )
+   finish
+endif
 
 if version < 700
     s:ErrMsg( "Error: Required vim >= 7.0" )
