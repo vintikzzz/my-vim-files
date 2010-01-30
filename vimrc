@@ -269,11 +269,14 @@ function! s:HighlightLongLines(width)
         echomsg "Usage: HighlightLongLines [natural number]"
     endif
 endfunction
-colorscheme InkPot
+colorscheme inkpot
+"set guioptions-=m  "remove menu bar
+set guioptions-=T  "remove toolbar
+set guioptions-=r  "remove right-hand scroll bar
 set nu "Отображать номер астрок
 set sw=2 "Заменяет TAB на 2 пробела
 set sts=2 "Аналогично, но в случае автоотступа
-set guifont=Consolas:h12:cRUSSIAN
+set guifont="Consolas 12"
 if has("multi_byte")
 if &termencoding == ""
 let &termencoding = &encoding
