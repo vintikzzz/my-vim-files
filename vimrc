@@ -21,6 +21,7 @@ set linebreak   "wrap lines at convenient points
 set statusline=%f       "tail of the filename
 
 "display a warning if fileformat isnt unix
+
 set statusline+=%#warningmsg#
 set statusline+=%{&ff!='unix'?'['.&ff.']':''}
 set statusline+=%*
@@ -218,10 +219,11 @@ nnoremap <C-L> :nohls<CR><C-L>
 inoremap <C-L> <C-O>:nohls<CR>
 
 "map to bufexplorer
-nnoremap <leader>b :BufExplorer<cr>
+nnoremap <c-tab> :BufExplorer<cr>
 
-"map to bufexplorer
-nnoremap <leader>t :NERDTreeToggle<cr>
+nnoremap <tab> :NERDTreeToggle<cr>
+nnoremap <c-k> :Bclose<cr>
+nnoremap <c-x> :TlistToggle<cr>
 
 "map to fuzzy finder text mate stylez
 nnoremap <c-f> :FufFile **/<CR>
@@ -270,7 +272,7 @@ function! s:HighlightLongLines(width)
     endif
 endfunction
 colorscheme inkpot
-"set guioptions-=m  "remove menu bar
+set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set nu "Отображать номер астрок
@@ -281,9 +283,9 @@ if has("multi_byte")
 if &termencoding == ""
 let &termencoding = &encoding
 endif
-setglobal fileencoding=utf-8 bomb
+setglobal fileencoding=utf-8
 set fileencodings=utf-8,cp1251,koi8-r,latin1
-set fileformats=dos,unix,mac
+set fileformats=unix,unix,mac
 endif
 set keymap=russian-jcukenwin
 set iskeyword=@,48-57,_,192-255
@@ -358,3 +360,7 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+set tags+=z:\.bundle\tags
+set sessionoptions+=unix
+let Tlist_Show_One_File = 1
+let Tlist_GainFocus_On_ToggleOpen = 1
