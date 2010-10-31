@@ -1,7 +1,7 @@
 "============================================================================
-"File:        sass.vim
+"File:        perl.vim
 "Description: Syntax checking plugin for syntastic.vim
-"Maintainer:  Martin Grenfell <martin.grenfell at gmail dot com>
+"Maintainer:  Anthony Carapetis <anthony.carapetis at gmail dot com>
 "License:     This program is free software. It comes without any warranty,
 "             to the extent permitted by applicable law. You can redistribute
 "             it and/or modify it under the terms of the Do What The Fuck You
@@ -9,25 +9,23 @@
 "             See http://sam.zoy.org/wtfpl/COPYING for more details.
 "
 "============================================================================
-if exists("loaded_sass_syntax_checker")
+
+" This checker requires efm_perl.pl, which is distributed with Vim version
+" seven and greater, as far as I know.
+
+if exists("loaded_perl_syntax_checker")
     finish
 endif
-let loaded_sass_syntax_checker = 1
+let loaded_perl_syntax_checker = 1
 
-"bail if the user doesnt have the sass binary installed
-if !executable("sass")
+"bail if the user doesnt have perl installed
+if !executable("perl")
     finish
 endif
 
-function! SyntaxCheckers_sass_GetLocList()
-    let makeprg='sass --check '.shellescape(expand('%'))
-    let errorformat = '%Wwarning on line %l:,%Z%m,Syntax %trror on line %l: %m'
-    let loclist = SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat })
+function! SyntaxCheckers_perl_GetLocList()
+    let makeprg = $VIMRUNTIME.'/tools/efm_perl.pl -c '.shellescape(expand('%'))
+    let errorformat =  '%f:%l:%m'
 
-    let bn = bufnr("")
-    for i in loclist
-        let i['bufnr'] = bn
-    endfor
-
-    return loclist
+    return SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat })
 endfunction

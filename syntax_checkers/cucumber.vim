@@ -1,7 +1,7 @@
 "============================================================================
 "File:        cucumber.vim
 "Description: Syntax checking plugin for syntastic.vim
-"Maintainer:  Martin Grenfell <martin_grenfell at msn dot com>
+"Maintainer:  Martin Grenfell <martin.grenfell at gmail dot com>
 "License:     This program is free software. It comes without any warranty,
 "             to the extent permitted by applicable law. You can redistribute
 "             it and/or modify it under the terms of the Do What The Fuck You
@@ -20,7 +20,7 @@ if !executable("cucumber")
 endif
 
 function! SyntaxCheckers_cucumber_GetLocList()
-    let makeprg = 'cucumber --dry-run --quiet --strict --format pretty %'
+    let makeprg = 'cucumber --dry-run --quiet --strict --format pretty '.shellescape(expand('%'))
     let errorformat =  '%f:%l:%c:%m,%W      %.%# (%m),%-Z%f:%l:%.%#,%-G%.%#'
 
     return SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat })

@@ -1,7 +1,7 @@
 "============================================================================
 "File:        php.vim
 "Description: Syntax checking plugin for syntastic.vim
-"Maintainer:  Martin Grenfell <martin_grenfell at msn dot com>
+"Maintainer:  Martin Grenfell <martin.grenfell at gmail dot com>
 "License:     This program is free software. It comes without any warranty,
 "             to the extent permitted by applicable law. You can redistribute
 "             it and/or modify it under the terms of the Do What The Fuck You
@@ -20,7 +20,7 @@ if !executable("php")
 endif
 
 function! SyntaxCheckers_php_GetLocList()
-    let makeprg = "php -l %"
-    let errorformat='%-GNo syntax errors detected in%.%#,%-GErrors parsing %.%#,%-G\s%#,%EParse error: syntax error\, %m in %f on line %l'
+    let makeprg = "php -l ".shellescape(expand('%'))
+    let errorformat='%-GNo syntax errors detected in%.%#,PHP Parse error: %#syntax %trror\, %m in %f on line %l,PHP Fatal %trror: %m in %f on line %l,%-GErrors parsing %.%#,%-G\s%#,Parse error: %#syntax %trror\, %m in %f on line %l,Fatal %trror: %m in %f on line %l'
     return SyntasticMake({ 'makeprg': makeprg, 'errorformat': errorformat })
 endfunction

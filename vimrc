@@ -221,9 +221,9 @@ inoremap <C-L> <C-O>:nohls<CR>
 "map to bufexplorer
 nnoremap <c-tab> :BufExplorer<cr>
 
-nnoremap <tab> :NERDTreeToggle<cr>
-nnoremap <c-k> :Bclose<cr>
-nnoremap <c-x> :TlistToggle<cr>
+nnoremap tt :NERDTreeToggle<cr>
+nnoremap <c-k> :Bclose!<cr>
+nnoremap tl :TlistToggle<cr>
 
 "map to fuzzy finder text mate stylez
 nnoremap <c-f> :FufFile **/<CR>
@@ -272,7 +272,6 @@ function! s:HighlightLongLines(width)
     endif
 endfunction
 colorscheme inkpot
-set guioptions-=m  "remove menu bar
 set guioptions-=T  "remove toolbar
 set guioptions-=r  "remove right-hand scroll bar
 set nu "Отображать номер астрок
@@ -364,3 +363,4 @@ set tags+=z:\.bundle\tags
 set sessionoptions+=unix
 let Tlist_Show_One_File = 1
 let Tlist_GainFocus_On_ToggleOpen = 1
+let NERDSpaceDelims = 1
