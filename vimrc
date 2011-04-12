@@ -218,16 +218,9 @@ endif
 nnoremap <C-L> :nohls<CR><C-L>
 inoremap <C-L> <C-O>:nohls<CR>
 
-"map to bufexplorer
-nnoremap <c-tab> :BufExplorer<cr>
-nnoremap <c-t> :FufFile **/<cr>
 
 nnoremap tt :NERDTreeToggle<cr>
 nnoremap <c-k> :Bclose!<cr>
-nnoremap tl :TlistToggle<cr>
-
-"map to fuzzy finder text mate stylez
-nnoremap <c-f> :FufFile **/<CR>
 
 "map Q to something useful
 noremap Q gq
@@ -367,3 +360,12 @@ let NERDSpaceDelims = 1
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#1F1F28 ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#22222B ctermbg=4
+set backup
+if has('win32')
+set backupdir=c:\tmp
+set dir=c:\tmp
+endif
+set tags=./tags,tags
+set guioptions-=L
+let NERDTreeQuitOnOpen = 1
+let g:EasyMotion_leader_key = 'm' 
