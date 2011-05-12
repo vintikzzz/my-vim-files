@@ -1,3 +1,4 @@
+call pathogen#runtime_append_all_bundles()
 "Use Vim settings, rather then Vi settings (much better!).
 "This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -272,6 +273,9 @@ set nu "Отображать номер астрок
 set sw=2 "Заменяет TAB на 2 пробела
 set sts=2 "Аналогично, но в случае автоотступа
 set guifont="Consolas 12"
+if has('mac')
+set guifont=Consolas:h14
+endif
 if has("multi_byte")
   if &termencoding == ""
     let &termencoding = &encoding
@@ -361,11 +365,18 @@ let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#1F1F28 ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#22222B ctermbg=4
 set backup
+set backupdir=/tmp
+set dir=/tmp
 if has('win32')
-set backupdir=c:\tmp
-set dir=c:\tmp
+  set backupdir=c:\tmp
+  set dir=c:\tmp
 endif
 set tags=./tags,tags
 set guioptions-=L
 let NERDTreeQuitOnOpen = 1
 let g:EasyMotion_leader_key = 'm' 
+set columns=100 
+if has("gui_macvim")
+  macmenu &File.New\ Tab key=<nop>
+  map <D-t> :CommandT<CR>
+endif
