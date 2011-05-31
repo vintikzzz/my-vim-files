@@ -376,7 +376,4 @@ set guioptions-=L
 let NERDTreeQuitOnOpen = 1
 let g:EasyMotion_leader_key = 'm' 
 set columns=100 
-if has("gui_macvim")
-  macmenu &File.New\ Tab key=<nop>
-  map <D-t> :CommandT<CR>
-endif
+map <D-j> :LustyJuggler<CR>
