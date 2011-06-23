@@ -4,6 +4,9 @@
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
+	url = git://github.com/scrooloose/nerdcommenter
 [submodule "bundle/textile"]
 	path = bundle/textile
 	url = git://github.com/timcharper/textile.vim.git
@@ -70,9 +73,9 @@
 [submodule "bundle/syntastic"]
 	path = bundle/syntastic
 	url = git://github.com/scrooloose/syntastic
-[submodule "bundle/command-t"]
-	path = bundle/command-t
-	url = git://github.com/vim-scripts/Command-T
 [submodule "bundle/rdoc"]
 	path = bundle/rdoc
-	url = git://github.com/hallison/vim-rdoc
+	url = git://github.com/depuracao/vim-rdoc
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = git://github.com/vintikzzz/Command-T.git

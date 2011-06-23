@@ -1,8 +1,12 @@
-bundle 'command-t', :git => 'git://github.com/vim-scripts/Command-T' do
-  `rvm use system && cd ruby/command-t && /usr/bin/ruby extconf.rb && make clean && make && cd - && rvm use default`
+# bundle 'command-t', :local => '~/Projects/Command-T' do
+  # `rvm use system && cd ruby/command-t && /usr/bin/ruby extconf.rb && make && cd ../rb-fsevent/ext && /usr/bin/ruby extconf.rb`
+# end
+bundle 'command-t', :git => 'git://github.com/vintikzzz/Command-T.git' do
+  `rvm use system && cd ruby/command-t && /usr/bin/ruby extconf.rb && make && cd ../rb-fsevent/ext && /usr/bin/ruby extconf.rb`
 end
 bundle 'snipmate', :git => 'git://github.com/msanders/snipmate.vim.git'
 bundle 'nerdtree', :git => 'git://github.com/scrooloose/nerdtree.git'
+bundle 'nerdcommenter', :git => 'git://github.com/scrooloose/nerdcommenter'
 bundle 'textile', :git => 'git://github.com/timcharper/textile.vim.git'
 bundle 'cucumber', :git => 'git://github.com/tpope/vim-cucumber.git'
 bundle 'fugitive', :git => 'git://github.com/tpope/vim-fugitive.git'
@@ -27,7 +31,7 @@ bundle 'json', :vim_script_id => 10853
 bundle 'lusty-juggler', :git => 'git://github.com/sjbach/lusty'
 bundle 'javascript', :git => 'git://github.com/pangloss/vim-javascript'
 bundle 'syntastic', :git => 'git://github.com/scrooloose/syntastic'
-bundle 'rdoc', :git => 'git://github.com/hallison/vim-rdoc'
+bundle 'rdoc', :git => 'git://github.com/depuracao/vim-rdoc'
 
 use_git_submodules true
 vim_bin_path '/usr/local/bin/mvim'
