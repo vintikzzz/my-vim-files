@@ -1,9 +1,9 @@
 # bundle 'command-t', :local => '~/Projects/Command-T' do
   # `rvm use system && cd ruby/command-t && /usr/bin/ruby extconf.rb && make && cd ../rb-fsevent/ext && /usr/bin/ruby extconf.rb`
 # end
-bundle 'command-t', :git => 'git://github.com/vintikzzz/Command-T.git' do
-  `rvm use system && cd ruby/command-t && /usr/bin/ruby extconf.rb && make && cd ../rb-fsevent/ext && /usr/bin/ruby extconf.rb`
-end
+# bundle 'command-t', :git => 'git://github.com/vintikzzz/Command-T.git' do
+  # `rvm use system && cd ruby/command-t && /usr/bin/ruby extconf.rb && make && cd ../rb-fsevent/ext && /usr/bin/ruby extconf.rb`
+# end
 bundle 'snipmate', :git => 'git://github.com/msanders/snipmate.vim.git'
 bundle 'nerdtree', :git => 'git://github.com/scrooloose/nerdtree.git'
 bundle 'nerdcommenter', :git => 'git://github.com/scrooloose/nerdcommenter'
@@ -19,7 +19,7 @@ bundle 'surround', :git => 'git://github.com/tpope/vim-surround.git'
 bundle 'align', :git=> 'git://github.com/tsaleh/vim-align.git'
 bundle 'shoulda', :git => 'git://github.com/tsaleh/vim-shoulda.git'
 bundle 'supertab', :git => 'git://github.com/tsaleh/vim-supertab.git'
-bundle 'tcomment', :git => 'git://github.com/tsaleh/vim-tcomment.git'
+bundle 'tcomment', :git => 'git://github.com/tomtom/tcomment_vim.git'
 bundle 'ruby', :git => 'git://github.com/vim-ruby/vim-ruby.git'
 bundle 'inkpot', :git => 'git://github.com/ciaranm/inkpot'
 bundle 'endwise', :git => 'git://github.com/tpope/vim-endwise'
@@ -32,6 +32,15 @@ bundle 'lusty-juggler', :git => 'git://github.com/sjbach/lusty'
 bundle 'javascript', :git => 'git://github.com/pangloss/vim-javascript'
 bundle 'syntastic', :git => 'git://github.com/scrooloose/syntastic'
 bundle 'rdoc', :git => 'git://github.com/depuracao/vim-rdoc'
+bundle 'treetop', :git => 'git://github.com/nanki/treetop.vim.git'
+bundle 'powerline', :git => 'git://github.com/Lokaltog/vim-powerline.git'
+bundle 'match-tag', :git => 'git://github.com/gregsexton/MatchTag.git'
+bundle 'ctrlp', :git => 'git://github.com/kien/ctrlp.vim.git'
+bundle 'vrackets', :vim_script_id => 16753, :as => :plugin
+bundle 'buffergator', :git => 'git://github.com/jeetsukumaran/vim-buffergator.git'
+bundle 'coffee-script', :git => 'git://github.com/kchmck/vim-coffee-script.git'
+
+
 
 use_git_submodules true
 vim_bin_path '/usr/local/bin/mvim'

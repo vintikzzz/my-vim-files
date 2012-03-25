@@ -382,6 +382,25 @@ au! BufRead,BufNewFile *.json set filetype=json foldmethod=syntax
 au! BufRead,BufNewFile vim_bundles set filetype=ruby
 set undodir=~/.undo
 set undofile
-set undolevels = 1000 "maximum number of changes that can be undone
-set undoreload = 10000 "maximum number lines to save for undo on a buffer reload
+set undolevels=1000 "maximum number of changes that can be undone
+set undoreload=10000 "maximum number lines to save for undo on a buffer reload
 let mapleader = ","
+set completeopt=longest,menuone
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*  " Linux/MacOSX
+set wildignore+=.git\*,.hg\*,.svn\*        " Windows
+let g:ctrlp_match_window_reversed = 0
+let g:ctrlp_max_height = 20
+let g:ctrlp_switch_buffer = 2
+" let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+let g:ctrlp_map = '<D-]>'
+let g:ctrlp_use_caching = 0
+" let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+let g:ctrlp_custom_ignore = {
+      \ 'dir':  '\.git$\|\.hg$\|\.svn$',
+      \ 'file': '\.exe$\|\.so$\|\.dll$',
+      \ }
+
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+  autocmd GUIEnter * set visualbell t_vb=
+endif
