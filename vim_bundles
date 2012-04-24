@@ -40,6 +40,7 @@ bundle 'vrackets', :vim_script_id => 16753, :as => :plugin
 bundle 'buffergator', :git => 'git://github.com/jeetsukumaran/vim-buffergator.git'
 bundle 'coffee-script', :git => 'git://github.com/kchmck/vim-coffee-script.git'
 bundle 'jst', :git => 'git://github.com/briancollins/vim-jst.git'
+bundle 'bundler', :git => 'git://github.com/tpope/vim-bundler.git'
 
 
 

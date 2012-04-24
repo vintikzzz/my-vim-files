@@ -43,6 +43,9 @@
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = git://github.com/tsaleh/vim-supertab.git
+[submodule "bundle/tcomment"]
+	path = bundle/tcomment
+	url = git://github.com/tomtom/tcomment_vim.git
 [submodule "bundle/ruby"]
 	path = bundle/ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
@@ -91,9 +94,9 @@
 [submodule "bundle/coffee-script"]
 	path = bundle/coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
-[submodule "bundle/tcomment"]
-	path = bundle/tcomment
-	url = git://github.com/tomtom/tcomment_vim.git
 [submodule "bundle/jst"]
 	path = bundle/jst
 	url = git://github.com/briancollins/vim-jst.git
+[submodule "bundle/bundler"]
+	path = bundle/bundler
+	url = git://github.com/tpope/vim-bundler.git
