@@ -1,9 +1,3 @@
-# bundle 'command-t', :local => '~/Projects/Command-T' do
-  # `rvm use system && cd ruby/command-t && /usr/bin/ruby extconf.rb && make && cd ../rb-fsevent/ext && /usr/bin/ruby extconf.rb`
-# end
-# bundle 'command-t', :git => 'git://github.com/vintikzzz/Command-T.git' do
-  # `rvm use system && cd ruby/command-t && /usr/bin/ruby extconf.rb && make && cd ../rb-fsevent/ext && /usr/bin/ruby extconf.rb`
-# end
 bundle 'snipmate', :git => 'git://github.com/msanders/snipmate.vim.git'
 bundle 'nerdtree', :git => 'git://github.com/scrooloose/nerdtree.git'
 bundle 'nerdcommenter', :git => 'git://github.com/scrooloose/nerdcommenter'
