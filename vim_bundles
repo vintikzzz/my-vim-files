@@ -35,6 +35,7 @@ bundle 'buffergator', :git => 'git://github.com/jeetsukumaran/vim-buffergator.gi
 bundle 'coffee-script', :git => 'git://github.com/kchmck/vim-coffee-script.git'
 bundle 'jst', :git => 'git://github.com/briancollins/vim-jst.git'
 bundle 'bundler', :git => 'git://github.com/tpope/vim-bundler.git'
+bundle 'less', :git => 'git://github.com/groenewege/vim-less.git'
 
 
 
